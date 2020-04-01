@@ -15,7 +15,10 @@ npm run serve
 npm run build
 ```
 
-### To learn the network/request.js in the project, you can contact coderwhy using WeChat 'coderwhy001'.
+### network/request.js
+```
+To learn the network/request.js in the project, you can contact coderwhy using WeChat 'coderwhy001'.
+```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
