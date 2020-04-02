@@ -17,4 +17,8 @@
 
 <style lang="scss">
   @import "assets/css/base.css";
+
+  #app {
+    padding-bottom: 49px;
+  }
 </style>

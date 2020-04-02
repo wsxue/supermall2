@@ -26,10 +26,13 @@
 <style scoped>
   .recommend {
     display: flex;
+
     width: 100%;
     padding: 5px 0px 10px;
     border-bottom: 5px solid #eee;
+
     font-size: 12px;
+
     text-align: center;
   }
   .recommend-item {
