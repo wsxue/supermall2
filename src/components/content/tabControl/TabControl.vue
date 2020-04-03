@@ -25,6 +25,8 @@
     methods: {
       itemClick(index) {
         this.currentIndex = index;
+        // console.log(index);
+        this.$emit('item-click', index)
       }
     }
   }

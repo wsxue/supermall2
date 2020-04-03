@@ -4,8 +4,8 @@
     <home-swiper :banners="banners"/>
     <recommend-view :recommends="recommends"/>
     <feature-view/>
-    <tab-control class="tab-control" :titles="titles"/>
-    <goods-list :goods="goods['pop'].list"/>
+    <tab-control class="tab-control" :titles="titles" @item-click="itemClick"/>
+    <goods-list :goods="showGoods" />
   </div>
 </template>
 
@@ -31,7 +31,13 @@
           'pop': {page: 0, list: []},
           'new': {page: 0, list: []},
           'sell': {page: 0, list: []}
-        }
+        },
+        goodsType: 'pop'
+      }
+    },
+    computed: {
+      showGoods() {
+        return this.goods[this.goodsType].list
       }
     },
     components: {
@@ -51,6 +57,9 @@
       this.getHomeGoods('sell')
     },
     methods: {
+      /**
+       *   created()内方法，与网络请求相关
+       */
       getHomeMultidata() {
         getHomeMultidata().then(res => {
           // console.log(res);
@@ -65,6 +74,13 @@
           this.goods[type].list.push(...res.data.list)
           this.goods[type].page = page
         })
+      },
+      /**
+       * 子组件事件监听方法
+       */
+      itemClick(index) {
+        // console.log(index);
+        this.goodsType = Object.keys(this.goods)[index];
       }
     }
   }
