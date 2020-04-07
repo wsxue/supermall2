@@ -44,11 +44,13 @@
         pullUpLoad: this.pullUpLoad
       });
 
-      this.scroll.on('pullingUp', () => {
-        console.log('上拉加载');
-        // 发送网络请求，处理数据
-        this.$emit('pulling-up')
-      });
+      if(this.pullUpLoad) {
+        this.scroll.on('pullingUp', () => {
+          // console.log('上拉加载');
+          // 发送网络请求，处理数据
+          this.$emit('pulling-up')
+        })
+      }
 
       this.scroll.on('scroll', (position) => {
         // console.log(position);
@@ -71,6 +73,7 @@
       },
       refresh() {
         this.scroll && this.scroll.refresh()
+        // console.log('refresh')
       }
     }
 

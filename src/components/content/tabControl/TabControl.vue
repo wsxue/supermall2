@@ -1,6 +1,8 @@
 <template>
   <div class="tab-control">
-    <div v-for="(item,index) in titles" :class="{'tab-control-item': true ,'tab-control-item-active': index===currentIndex }" @click="itemClick(index)">
+    <div v-for="(item,index) in titles"
+         :class="{'tab-control-item': true ,'tab-control-item-active': index===currentIndex }"
+         @click="itemClick(index)">
       <span>{{item}}</span>
     </div>
   </div>
@@ -35,7 +37,7 @@
 <style scoped>
  .tab-control {
    display: flex;
-   z-index: 2;
+   /*z-index: 2;*/
 
    width: 100%;
    background: white;
