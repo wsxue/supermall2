@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
+    <nav-bar class="home-nav"><div slot="center" class="title">购物街</div></nav-bar>
     <tab-control v-show="tabFixd"
                  class="tab-content"
                  :titles="titles"
@@ -99,12 +99,12 @@
 
     },
     activated() {
-      console.log('activated');
-      this.$refs.scroll.scrollTo(0, this.saveY, 0)
-      this.$refs.scroll.refresh()
+      console.log('activated' + this.saveY);
+      // this.$refs.scroll.scrollTo(0, this.saveY, 0)
+      // this.$refs.scroll.refresh()
     },
     deactivated() {
-      // console.log('deactivated');
+      console.log('deactivated' + this.saveY);
     },
     destroyed() {
       // console.log('home destrory');
@@ -184,7 +184,6 @@
     background-color: var(--color-tint);
     color: white;
   }
-
   .tab-content {
     /*position: fixed;*/
     /*top: 44px;*/
