@@ -66,6 +66,7 @@
     // }
     methods: {
       scrollTo(x, y, time=2000) {
+        // console.log('scrollTo');
         this.scroll && this.scroll.scrollTo(x, y, time)
       },
       finishPullUp() {

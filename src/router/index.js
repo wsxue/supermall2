@@ -26,7 +26,7 @@ const routes = [
   },
   {
     path: '/detail/:iid',
-    component: () => import('views/detail/Detail.vue')
+    component: () => import('views/detail/Detail.vue'),
   }
 ]
 
