@@ -99,12 +99,13 @@
 
     },
     activated() {
-      console.log('activated' + this.saveY)
-      this.$refs.scroll.scrollTo(0, this.saveY, 0)
+      console.log('activated    ' + this.saveY)
       this.$refs.scroll.refresh()
+      this.$refs.scroll.scrollTo(0, this.saveY, 0)
     },
     deactivated() {
-      console.log('deactivated' + this.saveY);
+      this.saveY = this.$refs.scroll.scroll.y
+      console.log('deactivated    ' + this.saveY);
     },
     destroyed() {
       // console.log('home destrory');
@@ -151,8 +152,7 @@
         this.$refs.scroll.scrollTo(0, 0)
       },
       posListener(y) {
-        // console.log(y);
-        this.saveY = y
+        // console.log(y)
         this.isShowBackTop = -y > 1145 ? true : false
         this.tabFixd = -y > this.tabOffsetTop ? true : false
       },

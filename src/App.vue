@@ -21,6 +21,6 @@
   @import "assets/css/base.css";
 
   #app {
-    padding-bottom: 49px;
+    /*padding-bottom: 49px;*/
   }
 </style>

@@ -30,12 +30,20 @@ export class Goods {
 export class Shop {
   constructor(shopInfo) {
     this.name = shopInfo.name
-    this.shopLogo = shopInfo.shopLogo
+    this.logo = shopInfo.shopLogo
+    this.allGoodsUrl = shopInfo.allGoodsUrl
 
     this.cFans = shopInfo.cFans
-    this.cGoods = shopInfo.cGoods
-    this.cSells = shopInfo.cSells
+    this.goodsCount = shopInfo.cGoods
+    this.sells = shopInfo.cSells
 
     this.score = shopInfo.score
+  }
+}
+
+export class ItemParams{
+  constructor(paramsInfo) {
+    this.info = paramsInfo.info
+    this.size = paramsInfo.rule.tables
   }
 }
