@@ -1,6 +1,6 @@
 <template>
   <div class="detail-nav-bar">
-    <tab-control :titles=titles />
+    <tab-control :titles=titles @item-click="itemClick" ref="detailTabControl"/>
   </div>
 </template>
 
@@ -18,6 +18,12 @@
         default() {
           return []
         }
+      }
+    },
+    methods: {
+      itemClick(index) {
+        // console.log(index)
+        this.$emit('navItemClick', index)
       }
     }
   }

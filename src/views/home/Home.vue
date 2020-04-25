@@ -33,13 +33,15 @@
   import TabControl from "components/content/tabControl/TabControl"
   import GoodsList from "components/content/goods/GoodsList"
   import Scroll from "components/common/scroll/Scroll"
-  import BackTop from "components/content/backTop/BackTop"
 
   import {getHomeMultidata, getHomeGoods} from "network/home"
   import {debounce} from "common/utils"
+  import {backTopMixin} from "common/mixin"
 
   export default {
     name: "home",
+    // mixin混入
+    mixins: [backTopMixin],
     data() {
       return {
         banners: [],
@@ -52,12 +54,12 @@
         },
         goodsType: 'pop',
         // backTop: false
-        isShowBackTop: false,
         tabOffsetTop: 0,
         tabFixd: false,
         saveY: 0
       }
     },
+
     computed: {
       showGoods() {
         return this.goods[this.goodsType].list
@@ -70,9 +72,9 @@
       FeatureView,
       TabControl,
       GoodsList,
-      Scroll,
-      BackTop
+      Scroll
     },
+
     created() {
       //1. 请求多个数据
       this.getHomeMultidata()
@@ -147,10 +149,7 @@
       //   this.backTop = false
       // }
       // back-top实现思路2
-      backtClick() {
-        // console.log('backtClick');
-        this.$refs.scroll.scrollTo(0, 0)
-      },
+
       posListener(y) {
         // console.log(y)
         this.isShowBackTop = -y > 1145 ? true : false

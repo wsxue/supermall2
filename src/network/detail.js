@@ -1,10 +1,17 @@
 import {request} from './request'
+
 export function getDetail(iid) {
   return request({
     url: '/detail',
     params: {
       iid
     }
+  })
+}
+
+export function getRecommend() {
+  return request({
+    url: '/recommend'
   })
 }
 
@@ -18,7 +25,6 @@ export class Goods {
 
     this.oldPrice = itemInfo.oldPrice
     this.newPrice = itemInfo.price
-    this.realPrice = itemInfo.lowNowPrice
     this.lowNowPrice = itemInfo.lowNowPrice
 
     this.columns = columns
@@ -47,3 +53,4 @@ export class ItemParams{
     this.size = paramsInfo.rule.tables
   }
 }
+
