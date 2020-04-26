@@ -163,8 +163,9 @@
         product.title = this.goods.title
         product.desc = this.goods.desc
         product.price = this.goods.lowNowPrice
+        product.checked = true
         // 2. 把数据传入Vuex
-        this.$store.commit('addCart', product)
+        this.$store.dispatch('addToCart', product)
       }
     }
   }
