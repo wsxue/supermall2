@@ -43,6 +43,8 @@
 
   import {backTopMixin} from "common/mixin"
 
+  import {mapActions} from 'vuex'
+
   export default {
     name: "Detail",
     mixins: [backTopMixin],
@@ -83,6 +85,9 @@
       this.getRecommend()
     },
     methods: {
+      ...mapActions({
+        addCart: 'addToCart'
+      }),
       backClick() {
         this.$router.back()
       },
@@ -165,7 +170,13 @@
         product.price = this.goods.lowNowPrice
         product.checked = true
         // 2. 把数据传入Vuex
-        this.$store.dispatch('addToCart', product)
+        // this.$store.dispatch('addToCart', product).then(res => {
+        //   console.log(res);
+        // })
+        // 通过mapActions调用actions方法
+        this.addCart(product).then(res => {
+          this.$toast.show(res)
+        })
       }
     }
   }
