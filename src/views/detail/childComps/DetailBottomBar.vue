@@ -34,9 +34,13 @@
 
 <style scoped>
   #bottom-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
 
-    height: 52px;
+    height: 49px;
 
     text-align: center;
   }
@@ -58,7 +62,7 @@
     display: block;
     width: 22px;
     height: 22px;
-    margin: 10px auto 3px;
+    margin: 10px auto 1px;
     background: url("~assets/img/detail/detail_bottom.png") 0 0/100%;
   }
 

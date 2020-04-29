@@ -191,7 +191,7 @@
     height: 100vh;
   }
   .context {
-    height: calc(100% - 44px - 52px);
+    height: calc(100% - 44px - 49px);
     overflow: hidden;
   }
   .detail-nav {

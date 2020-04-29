@@ -28,7 +28,7 @@
   .goods-list {
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
+    padding: 5px 5px 0px 5px;
     justify-content: space-around;
   }
 
